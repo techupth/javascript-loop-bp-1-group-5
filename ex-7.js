@@ -85,3 +85,9 @@ let orders = [
 
 const jcbOrders = [];
 // Start coding here
+for (i = 0; i < orders.length; i++) {
+  if (orders[i].creditCardType.includes("jcb")) {
+    jcbOrders.push(orders[i])
+  }
+}
+console.log(jcbOrders)
