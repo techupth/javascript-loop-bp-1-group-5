@@ -4,3 +4,24 @@ let newRestaurants = [];
 
 // Start coding here
 
+let i= 0
+
+
+while ( i < restaurants.length){
+    console.log("Restaurant Name: " + restaurants[i] );
+    newRestaurants.push("Restaurant Name: " + restaurants[i])
+    i++
+}
+
+
+console.log(newRestaurants)
+
+
+// while (i < restaurants.length) {
+//     newRestaurants.push(`Restaurant Name: ${restaurants[i]}`);
+//     i++;
+// }
+
+// console.log(newRestaurants);
+
+
