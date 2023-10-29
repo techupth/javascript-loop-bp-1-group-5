@@ -10,3 +10,35 @@ let studentsScore = {
 };
 
 // Start coding here
+
+let sumOfStudentScores = 0; //keep track of the total score
+let totalStudent = 0; // keep track of the number of students.
+
+let highScore = -Infinity ;
+let lowScore = Infinity  ;
+let studentWithHighestScore = "";
+let studentWithlowestScore = "";
+
+for ( let total in studentsScore ){
+    sumOfStudentScores += studentsScore[total]
+    totalStudent++
+}
+    
+for ( let total in studentsScore ){
+    if (studentsScore[total] > highScore ){
+        highScore = studentsScore[total]
+        studentWithHighestScore = total;
+        
+    }
+
+    if (studentsScore[total] < lowScore) {
+        lowScore = studentsScore[total];
+        studentWithlowestScore = total;
+  }
+}
+    
+
+let averageScore = sumOfStudentScores / totalStudent
+console.log(`Average score is ${averageScore}`)
+console.log( `${highScore} ${studentWithHighestScore}` )
+console.log(`${lowScore} ${studentWithlowestScore}`)

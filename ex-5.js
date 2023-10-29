@@ -85,7 +85,23 @@ let orders = [
 
 
 let currentPurchasedAmount;
-let maxPurchasedAmount;
-let maxPurchasedId;
+let maxPurchasedAmount = 0 ;
+let maxPurchasedId = null ;
 
-// Start coding here
+
+
+for (let i = 0; i < orders.length; i++) {
+    const order = orders[i]; 
+    const totalPurchase = order.productPrice * order.productQuantity;
+
+    if (totalPurchase > maxPurchasedAmount) {
+        maxPurchasedAmount = totalPurchase;
+        maxPurchasedId = order;
+    }
+}
+
+if (maxPurchasedId) {
+    console.log(`Order id: ${maxPurchasedId.id}, Total price: ${maxPurchasedAmount}`);
+} else {
+    console.log("No orders found.");
+}

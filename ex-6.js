@@ -83,6 +83,28 @@ let orders = [
   },
 ];
 
-let birdiePurchasedAmount;
+
 
 // Start coding here
+
+let customerNameToFind = "Birdie Shepland";
+
+let birdiePurchasedAmount = 0;
+
+for (let i = 0; i < orders.length; i++) {
+    const order = orders[i];
+    if (order.customerName === customerNameToFind) {
+        birdiePurchasedAmount = order.productPrice * order.productQuantity;
+    }
+}
+
+console.log(`Total purchase for ${customerNameToFind}: ${birdiePurchasedAmount}`);
+
+
+  // const totalPurchase = orders.productPrice * orders.productQuantity;
+
+  // for(let i = 0 ; i < orders.length ; i++){
+  //   console.log(totalPurchase)
+
+  // }
+
