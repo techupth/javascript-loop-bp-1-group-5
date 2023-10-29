@@ -83,5 +83,23 @@ let orders = [
   },
 ];
 
-let sumPurchasedAmount = 0;
-// Start coding here
+// ท่อนนี้เราหาผลคูณให้ได้ ยอดในการซื้อของแต่ละคน Line92 , จากนั้นเอาไปใส่ใน Array ใหม่
+let totalPrice = [];
+
+for ( let i = 0 ; i < orders.length ; i++){
+    let eachTotalPrice = (orders[i].productPrice * orders[i].productQuantity)
+    console.log(eachTotalPrice)
+    totalPrice.push(eachTotalPrice)
+    
+}
+console.log(totalPrice)
+
+
+// หลังจากนั้นเราใช้ .reduce() ในการหาผลรวม เพราะ .reduce() คือ การนำ Value ทุกอันใน Array มารวมกันเป็น Value อันเดียว
+
+function sum(accumulator, currentValue){
+    return accumulator + currentValue
+}
+
+let  totalOfAllPurchase = totalPrice.reduce(sum,0)
+console.log(totalOfAllPurchase) // 62255151
